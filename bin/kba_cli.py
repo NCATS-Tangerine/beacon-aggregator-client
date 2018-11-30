@@ -3,9 +3,15 @@ import click, time, os, pprint, pickle
 from progress.spinner import Spinner as _Spinner
 
 class Spinner(_Spinner):
+    """
+    A custom spinner class that clears its own message when finish is called.
+    """
     phases = ['x', '|', '-', '+']
     def clearln(self):
         print('\r\x1b[K', end='', file=self.file)
+    def finish(self):
+        self.clearln()
+        _Spinner.finish(self)
 
 from kba.utils import AggregatorApi
 from kba import ConceptsApi, StatementsApi, MetadataApi
@@ -32,7 +38,7 @@ def join(thread, message='Waiting for response ', seconds=0.1):
         time.sleep(seconds)
         spinner.next()
 
-    spinner.clearln()
+    spinner.finish()
 
     return thread.get()
 
