@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import click, time, os, pprint, pickle
 
 from progress.spinner import Spinner as _Spinner
