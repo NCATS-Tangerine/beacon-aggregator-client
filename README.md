@@ -21,7 +21,7 @@ Python 2.7 and 3.4+
 You can install from PyPI:
 
 ```sh
-python3.7 -m pip install kba
+python3 -m pip install kba
 ```
 
 Then import the package:
