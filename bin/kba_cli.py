@@ -62,13 +62,14 @@ def concept(keywords, categories, beacons):
     if beacons is not None:
         kwargs['beacons'] = list(beacons)
 
-    thread = ConceptsApi().post_concepts_query(keywords=keywords, **kwargs, asynchronous=True)
+    thread = ConceptsApi().post_concepts_query(keywords=keywords, asynchronous=True, **kwargs)
 
     response = join(thread, 'Waiting for response ')
 
     click.echo('Query ID:\t{}'.format(response.query_id))
 
     save({'query' : response.query_id, 'command' : 'concept'})
+
 
 @cli.command()
 @click.option('--source', '-s', type=str, multiple=True)
@@ -95,7 +96,7 @@ def statement(source, relation, target, keyword, category, beacon):
     if beacon is not None:
         kwargs['beacons'] = list(beacon)
 
-    thread = StatementsApi().post_statements_query(**kwargs, asynchronous=True)
+    thread = StatementsApi().post_statements_query(asynchronous=True, **kwargs)
 
     response = join(thread, 'Waiting for response ')
 
