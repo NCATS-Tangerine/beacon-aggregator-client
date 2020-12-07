@@ -62,7 +62,7 @@ def concept(keywords, categories, beacons):
     if beacons is not None:
         kwargs['beacons'] = list(beacons)
 
-    thread = ConceptsApi().post_concepts_query(keywords=keywords, **kwargs, async=True)
+    thread = ConceptsApi().post_concepts_query(keywords=keywords, **kwargs, asynchronous=True)
 
     response = join(thread, 'Waiting for response ')
 
@@ -95,7 +95,7 @@ def statement(source, relation, target, keyword, category, beacon):
     if beacon is not None:
         kwargs['beacons'] = list(beacon)
 
-    thread = StatementsApi().post_statements_query(**kwargs, async=True)
+    thread = StatementsApi().post_statements_query(**kwargs, asynchronous=True)
 
     response = join(thread, 'Waiting for response ')
 
@@ -122,9 +122,9 @@ def ping(query, command):
         command = state['command']
 
     if command == 'concept':
-        thread = ConceptsApi().get_concepts_query_status(query, async=True)
+        thread = ConceptsApi().get_concepts_query_status(query, asynchronous=True)
     elif command == 'statement':
-        thread = StatementsApi().get_statements_query_status(query, async=True)
+        thread = StatementsApi().get_statements_query_status(query, asynchronous=True)
     else:
         raise Exception('Unknown command {}'.format(command))
 
@@ -163,9 +163,9 @@ def dump(query, command, out, page, size):
         command = state['command']
 
     if command == 'concept':
-        thread = ConceptsApi().get_concepts(query, page_number=page, page_size=size, async=True)
+        thread = ConceptsApi().get_concepts(query, page_number=page, page_size=size, asynchronous=True)
     elif command == 'statement':
-        thread = StatementsApi().get_statements(query, page_number=page, page_size=size, async=True)
+        thread = StatementsApi().get_statements(query, page_number=page, page_size=size, asynchronous=True)
     else:
         raise Exception('Unknown command {}'.format(command))
 
@@ -184,7 +184,7 @@ def predicates(out):
     """
     Retrieves all predicates
     """
-    thread = MetadataApi().get_predicates(async=True)
+    thread = MetadataApi().get_predicates(asynchronous=True)
     response = join(thread)
 
     if out is not None:
@@ -200,7 +200,7 @@ def kmap(out):
     """
     Retrieves the knowledge map
     """
-    thread = MetadataApi().get_knowledge_map(async=True)
+    thread = MetadataApi().get_knowledge_map(asynchronous=True)
     response = join(thread)
 
     if out is not None:
@@ -216,7 +216,7 @@ def categories(out):
     """
     Retrieves all categories
     """
-    thread = MetadataApi().get_concept_categories(async=True)
+    thread = MetadataApi().get_concept_categories(asynchronous=True)
     response = join(thread)
 
     if out is not None:
@@ -232,7 +232,7 @@ def beacons(out):
     """
     Retrieves all beacons
     """
-    thread = MetadataApi().get_beacons(async=True)
+    thread = MetadataApi().get_beacons(asynchronous=True)
     response = join(thread)
 
     if out is not None:

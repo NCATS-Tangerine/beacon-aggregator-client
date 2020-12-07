@@ -38,17 +38,17 @@ class MetadataApi(object):
 
         Get a list of all of the knowledge beacons that the aggregator can query   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_beacons(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_beacons(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :return: list[ServerKnowledgeBeacon]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_beacons_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_beacons_with_http_info(**kwargs)  # noqa: E501
@@ -59,18 +59,18 @@ class MetadataApi(object):
 
         Get a list of all of the knowledge beacons that the aggregator can query   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_beacons_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_beacons_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :return: list[ServerKnowledgeBeacon]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -114,7 +114,7 @@ class MetadataApi(object):
             files=local_var_files,
             response_type='list[ServerKnowledgeBeacon]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -125,18 +125,18 @@ class MetadataApi(object):
 
         Get a list of semantic categories and number of instances in each available knowledge beacon, including associated beacon-specific metadata   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_concept_categories(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_concept_categories(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[int] beacons: set of aggregator indices of beacons to constrain categories returned 
         :return: list[ServerConceptCategory]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_concept_categories_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_concept_categories_with_http_info(**kwargs)  # noqa: E501
@@ -147,11 +147,11 @@ class MetadataApi(object):
 
         Get a list of semantic categories and number of instances in each available knowledge beacon, including associated beacon-specific metadata   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_concept_categories_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_concept_categories_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[int] beacons: set of aggregator indices of beacons to constrain categories returned 
         :return: list[ServerConceptCategory]
                  If the method is called asynchronously,
@@ -159,7 +159,7 @@ class MetadataApi(object):
         """
 
         all_params = ['beacons']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -206,7 +206,7 @@ class MetadataApi(object):
             files=local_var_files,
             response_type='list[ServerConceptCategory]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -217,18 +217,18 @@ class MetadataApi(object):
 
         Get a log of the system errors associated with a specified query   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_error_log(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_error_log(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: query identifier returned from a POSTed query  (required)
         :return: list[ServerLogEntry]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_error_log_with_http_info(query_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_error_log_with_http_info(query_id, **kwargs)  # noqa: E501
@@ -239,11 +239,11 @@ class MetadataApi(object):
 
         Get a log of the system errors associated with a specified query   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_error_log_with_http_info(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_error_log_with_http_info(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: query identifier returned from a POSTed query  (required)
         :return: list[ServerLogEntry]
                  If the method is called asynchronously,
@@ -251,7 +251,7 @@ class MetadataApi(object):
         """
 
         all_params = ['query_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -301,7 +301,7 @@ class MetadataApi(object):
             files=local_var_files,
             response_type='list[ServerLogEntry]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -312,18 +312,18 @@ class MetadataApi(object):
 
         Get a high level knowledge map of the all the beacons specified by triplets of subject concept category, relationship predicate and concept object category   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_knowledge_map(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_knowledge_map(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[int] beacons: set of aggregator indices of beacons constraining knowledge maps returned 
         :return: list[ServerKnowledgeMap]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_knowledge_map_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_knowledge_map_with_http_info(**kwargs)  # noqa: E501
@@ -334,11 +334,11 @@ class MetadataApi(object):
 
         Get a high level knowledge map of the all the beacons specified by triplets of subject concept category, relationship predicate and concept object category   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_knowledge_map_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_knowledge_map_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[int] beacons: set of aggregator indices of beacons constraining knowledge maps returned 
         :return: list[ServerKnowledgeMap]
                  If the method is called asynchronously,
@@ -346,7 +346,7 @@ class MetadataApi(object):
         """
 
         all_params = ['beacons']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -393,7 +393,7 @@ class MetadataApi(object):
             files=local_var_files,
             response_type='list[ServerKnowledgeMap]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -404,18 +404,18 @@ class MetadataApi(object):
 
         Get a list of predicates used in statements issued by the knowledge source   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_predicates(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_predicates(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[int] beacons: set of aggregator indices of beacons to constrain predicates returned 
         :return: list[ServerPredicate]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_predicates_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_predicates_with_http_info(**kwargs)  # noqa: E501
@@ -426,11 +426,11 @@ class MetadataApi(object):
 
         Get a list of predicates used in statements issued by the knowledge source   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_predicates_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_predicates_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[int] beacons: set of aggregator indices of beacons to constrain predicates returned 
         :return: list[ServerPredicate]
                  If the method is called asynchronously,
@@ -438,7 +438,7 @@ class MetadataApi(object):
         """
 
         all_params = ['beacons']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -485,7 +485,7 @@ class MetadataApi(object):
             files=local_var_files,
             response_type='list[ServerPredicate]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

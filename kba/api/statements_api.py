@@ -38,11 +38,11 @@ class StatementsApi(object):
 
         Retrieves a details relating to a specified concept-relationship statement include 'is_defined_by and 'provided_by' provenance; extended edge properties exported as tag = value; and any associated annotations (publications, etc.)  cited as evidence for the given statement.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_statement_details(statement_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_statement_details(statement_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str statement_id: (url-encoded) CURIE identifier of the concept-relationship statement (\"assertion\", \"claim\") for which associated evidence is sought, e.g. kbs:Q420626_P2175_Q126691  (required)
         :param list[str] keywords: an array of keywords or substrings against which to filter a reference label (e.g. title) statement evidence citation array.
         :param int page_number: (1-based) number of the page to be returned in a paged set of statement.evidence array entries. Defaults to 1.
@@ -52,7 +52,7 @@ class StatementsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_statement_details_with_http_info(statement_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_statement_details_with_http_info(statement_id, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class StatementsApi(object):
 
         Retrieves a details relating to a specified concept-relationship statement include 'is_defined_by and 'provided_by' provenance; extended edge properties exported as tag = value; and any associated annotations (publications, etc.)  cited as evidence for the given statement.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_statement_details_with_http_info(statement_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_statement_details_with_http_info(statement_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str statement_id: (url-encoded) CURIE identifier of the concept-relationship statement (\"assertion\", \"claim\") for which associated evidence is sought, e.g. kbs:Q420626_P2175_Q126691  (required)
         :param list[str] keywords: an array of keywords or substrings against which to filter a reference label (e.g. title) statement evidence citation array.
         :param int page_number: (1-based) number of the page to be returned in a paged set of statement.evidence array entries. Defaults to 1.
@@ -78,7 +78,7 @@ class StatementsApi(object):
         """
 
         all_params = ['statement_id', 'keywords', 'page_number', 'page_size']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -135,7 +135,7 @@ class StatementsApi(object):
             files=local_var_files,
             response_type='ServerStatementDetails',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -146,11 +146,11 @@ class StatementsApi(object):
 
         Given a specification [CURIE-encoded](https://www.w3.org/TR/curie/) a 'source' clique identifier for a set of exactly matching concepts, retrieves a paged list of concept-relations where either the subject or object concept matches the 'source' clique identifier.  Optionally, a 'target' clique identifier may also be given, in which case the 'target' clique identifier should match the concept clique opposing the 'source', that is, if the 'source' matches a subject, then the  'target' should match the object of a given statement (or vice versa).   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_statements(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_statements(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: an active query identifier as returned by a POST of statement query parameters. (required)
         :param list[int] beacons: subset of aggregator indices of beacons whose statements are to be retrieved
         :param int page_number: (1-based) number of the page to be returned in a paged set of query results. Defaults to '1'.
@@ -160,7 +160,7 @@ class StatementsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_statements_with_http_info(query_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_statements_with_http_info(query_id, **kwargs)  # noqa: E501
@@ -171,11 +171,11 @@ class StatementsApi(object):
 
         Given a specification [CURIE-encoded](https://www.w3.org/TR/curie/) a 'source' clique identifier for a set of exactly matching concepts, retrieves a paged list of concept-relations where either the subject or object concept matches the 'source' clique identifier.  Optionally, a 'target' clique identifier may also be given, in which case the 'target' clique identifier should match the concept clique opposing the 'source', that is, if the 'source' matches a subject, then the  'target' should match the object of a given statement (or vice versa).   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_statements_with_http_info(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_statements_with_http_info(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: an active query identifier as returned by a POST of statement query parameters. (required)
         :param list[int] beacons: subset of aggregator indices of beacons whose statements are to be retrieved
         :param int page_number: (1-based) number of the page to be returned in a paged set of query results. Defaults to '1'.
@@ -186,7 +186,7 @@ class StatementsApi(object):
         """
 
         all_params = ['query_id', 'beacons', 'page_number', 'page_size']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -243,7 +243,7 @@ class StatementsApi(object):
             files=local_var_files,
             response_type='ServerStatementsQueryResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -254,11 +254,11 @@ class StatementsApi(object):
 
         Retrieves the status of a given query about the statements in the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_statements_query_status(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_statements_query_status(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: an active query identifier as returned by a POST of statements query parameters. (required)
         :param list[int] beacons: subset of aggregator indices of beacons whose status is being polled (if omitted, then the status of all beacons from the query are returned)
         :return: ServerStatementsQueryStatus
@@ -266,7 +266,7 @@ class StatementsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_statements_query_status_with_http_info(query_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_statements_query_status_with_http_info(query_id, **kwargs)  # noqa: E501
@@ -277,11 +277,11 @@ class StatementsApi(object):
 
         Retrieves the status of a given query about the statements in the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_statements_query_status_with_http_info(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_statements_query_status_with_http_info(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: an active query identifier as returned by a POST of statements query parameters. (required)
         :param list[int] beacons: subset of aggregator indices of beacons whose status is being polled (if omitted, then the status of all beacons from the query are returned)
         :return: ServerStatementsQueryStatus
@@ -290,7 +290,7 @@ class StatementsApi(object):
         """
 
         all_params = ['query_id', 'beacons']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -343,7 +343,7 @@ class StatementsApi(object):
             files=local_var_files,
             response_type='ServerStatementsQueryStatus',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -354,11 +354,11 @@ class StatementsApi(object):
 
         Posts a query to retrieve concept-relations where either the subject or object concept matches a [CURIE-encoded 'source'](https://www.w3.org/TR/curie/) clique identifier designating a set of exactly matching concepts. A 'target' clique identifier may optionally be given, in which case the 'target' clique identifier should match the concept clique opposing the 'source', that is, if the 'source' matches a subject, then the  'target' should match the object of a given statement (or vice versa).   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.post_statements_query(source, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.post_statements_query(source, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str source: a [CURIE-encoded](https://www.w3.org/TR/curie/) identifier of the exactly matching 'source' clique, cliques as identified by other endpoints of the beacon aggregator API.  (required)
         :param list[str] relations: a subset (array) of identifiers of predicate relation identifiers with which to constrain the statement relations retrieved  for the given query seed concept. The predicate ids sent should  be as published by the beacon-aggregator by the /predicates API endpoint.
         :param str target: a [CURIE-encoded](https://www.w3.org/TR/curie/) identifier of the exactly matching 'target' clique, cliques as identified by other endpoints of the beacon aggregator API.
@@ -370,7 +370,7 @@ class StatementsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.post_statements_query_with_http_info(source, **kwargs)  # noqa: E501
         else:
             (data) = self.post_statements_query_with_http_info(source, **kwargs)  # noqa: E501
@@ -381,11 +381,11 @@ class StatementsApi(object):
 
         Posts a query to retrieve concept-relations where either the subject or object concept matches a [CURIE-encoded 'source'](https://www.w3.org/TR/curie/) clique identifier designating a set of exactly matching concepts. A 'target' clique identifier may optionally be given, in which case the 'target' clique identifier should match the concept clique opposing the 'source', that is, if the 'source' matches a subject, then the  'target' should match the object of a given statement (or vice versa).   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.post_statements_query_with_http_info(source, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.post_statements_query_with_http_info(source, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str source: a [CURIE-encoded](https://www.w3.org/TR/curie/) identifier of the exactly matching 'source' clique, cliques as identified by other endpoints of the beacon aggregator API.  (required)
         :param list[str] relations: a subset (array) of identifiers of predicate relation identifiers with which to constrain the statement relations retrieved  for the given query seed concept. The predicate ids sent should  be as published by the beacon-aggregator by the /predicates API endpoint.
         :param str target: a [CURIE-encoded](https://www.w3.org/TR/curie/) identifier of the exactly matching 'target' clique, cliques as identified by other endpoints of the beacon aggregator API.
@@ -398,7 +398,7 @@ class StatementsApi(object):
         """
 
         all_params = ['source', 'relations', 'target', 'keywords', 'categories', 'beacons']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -462,7 +462,7 @@ class StatementsApi(object):
             files=local_var_files,
             response_type='ServerStatementsQuery',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

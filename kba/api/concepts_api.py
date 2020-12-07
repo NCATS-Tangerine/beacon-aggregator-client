@@ -38,18 +38,18 @@ class ConceptsApi(object):
 
         Retrieves a list of concept cliques based on  'data ready' from a previously /cliques posted query parameter submission   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_cliques(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_cliques(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: the query identifier of a concepts query previously posted by the /cliques endpoint (required)
         :return: ServerCliquesQueryResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_cliques_with_http_info(query_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_cliques_with_http_info(query_id, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ConceptsApi(object):
 
         Retrieves a list of concept cliques based on  'data ready' from a previously /cliques posted query parameter submission   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_cliques_with_http_info(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_cliques_with_http_info(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: the query identifier of a concepts query previously posted by the /cliques endpoint (required)
         :return: ServerCliquesQueryResult
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ConceptsApi(object):
         """
 
         all_params = ['query_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -122,7 +122,7 @@ class ConceptsApi(object):
             files=local_var_files,
             response_type='ServerCliquesQueryResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -133,18 +133,18 @@ class ConceptsApi(object):
 
         Retrieves the status of a given query about the cliques in the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_cliques_query_status(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_cliques_query_status(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: an active query identifier as returned by a POST of clique query parameters. (required)
         :return: ServerCliquesQueryStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_cliques_query_status_with_http_info(query_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_cliques_query_status_with_http_info(query_id, **kwargs)  # noqa: E501
@@ -155,8 +155,8 @@ class ConceptsApi(object):
 
         Retrieves the status of a given query about the cliques in the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_cliques_query_status_with_http_info(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_cliques_query_status_with_http_info(query_id, asynchronous=True)
         >>> result = thread.get()
 
         :param async bool
@@ -167,7 +167,7 @@ class ConceptsApi(object):
         """
 
         all_params = ['query_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -217,7 +217,7 @@ class ConceptsApi(object):
             files=local_var_files,
             response_type='ServerCliquesQueryStatus',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -228,11 +228,11 @@ class ConceptsApi(object):
 
         Retrieves details for a specified clique of equivalent concepts in the system,  as specified by a (url-encoded) CURIE identifier of a clique known to the aggregator   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_concept_details(clique_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_concept_details(clique_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str clique_id: a [CURIE-encoded](https://www.w3.org/TR/curie/) identifier, as returned  by any other endpoint of the beacon aggregator API, of an exactly matching  concept clique of interest. (required)
         :param list[int] beacons: set of aggregator indices of beacons to be used as knowledge sources for the query 
         :return: ServerConceptWithDetails
@@ -240,7 +240,7 @@ class ConceptsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_concept_details_with_http_info(clique_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_concept_details_with_http_info(clique_id, **kwargs)  # noqa: E501
@@ -251,11 +251,11 @@ class ConceptsApi(object):
 
         Retrieves details for a specified clique of equivalent concepts in the system,  as specified by a (url-encoded) CURIE identifier of a clique known to the aggregator   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_concept_details_with_http_info(clique_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_concept_details_with_http_info(clique_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str clique_id: a [CURIE-encoded](https://www.w3.org/TR/curie/) identifier, as returned  by any other endpoint of the beacon aggregator API, of an exactly matching  concept clique of interest. (required)
         :param list[int] beacons: set of aggregator indices of beacons to be used as knowledge sources for the query 
         :return: ServerConceptWithDetails
@@ -264,7 +264,7 @@ class ConceptsApi(object):
         """
 
         all_params = ['clique_id', 'beacons']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -317,7 +317,7 @@ class ConceptsApi(object):
             files=local_var_files,
             response_type='ServerConceptWithDetails',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -328,11 +328,11 @@ class ConceptsApi(object):
 
         Retrieves a (paged) list of basic equivalent concept clique data from beacons 'data ready' from a previously /concepts posted query parameter submission   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_concepts(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_concepts(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: the query identifier of a concepts query previously posted by the /concepts endpoint (required)
         :param list[int] beacons: set of aggregator indices of beacons whose data are to be retrieved 
         :param int page_number: (1-based) number of the page to be returned in a paged set of query results. Defaults to '1'. 
@@ -342,7 +342,7 @@ class ConceptsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_concepts_with_http_info(query_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_concepts_with_http_info(query_id, **kwargs)  # noqa: E501
@@ -353,11 +353,11 @@ class ConceptsApi(object):
 
         Retrieves a (paged) list of basic equivalent concept clique data from beacons 'data ready' from a previously /concepts posted query parameter submission   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_concepts_with_http_info(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_concepts_with_http_info(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: the query identifier of a concepts query previously posted by the /concepts endpoint (required)
         :param list[int] beacons: set of aggregator indices of beacons whose data are to be retrieved 
         :param int page_number: (1-based) number of the page to be returned in a paged set of query results. Defaults to '1'. 
@@ -368,7 +368,7 @@ class ConceptsApi(object):
         """
 
         all_params = ['query_id', 'beacons', 'page_number', 'page_size']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -425,7 +425,7 @@ class ConceptsApi(object):
             files=local_var_files,
             response_type='ServerConceptsQueryResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -436,11 +436,11 @@ class ConceptsApi(object):
 
         Retrieves the status of a given keyword search query about the concepts in the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_concepts_query_status(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_concepts_query_status(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: an active query identifier as returned by a POST of concept query parameters. (required)
         :param list[int] beacons: subset of aggregator indices of beacons whose status is being polled (if omitted, then the status of all beacons from the query are returned) 
         :return: ServerConceptsQueryStatus
@@ -448,7 +448,7 @@ class ConceptsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_concepts_query_status_with_http_info(query_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_concepts_query_status_with_http_info(query_id, **kwargs)  # noqa: E501
@@ -459,11 +459,11 @@ class ConceptsApi(object):
 
         Retrieves the status of a given keyword search query about the concepts in the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_concepts_query_status_with_http_info(query_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_concepts_query_status_with_http_info(query_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str query_id: an active query identifier as returned by a POST of concept query parameters. (required)
         :param list[int] beacons: subset of aggregator indices of beacons whose status is being polled (if omitted, then the status of all beacons from the query are returned) 
         :return: ServerConceptsQueryStatus
@@ -472,7 +472,7 @@ class ConceptsApi(object):
         """
 
         all_params = ['query_id', 'beacons']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -525,7 +525,7 @@ class ConceptsApi(object):
             files=local_var_files,
             response_type='ServerConceptsQueryStatus',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -536,18 +536,18 @@ class ConceptsApi(object):
 
         Retrieves the beacon aggregator assigned cliques of equivalent concepts that includes the specified (url-encoded) CURIE identifiers. Note that the clique to which a given concept CURIE belongs may change over time as the aggregator progressively discovers the members of the clique. Any unmatched identifiers will be ignored (e.g. the id couldn't be found in any of the beacons)   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.post_cliques_query(ids, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.post_cliques_query(ids, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[str] ids: an array of [CURIE-encoded](https://www.w3.org/TR/curie/) identifiers of interest to be resolved to a list of concept cliques (required)
         :return: ServerCliquesQuery
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.post_cliques_query_with_http_info(ids, **kwargs)  # noqa: E501
         else:
             (data) = self.post_cliques_query_with_http_info(ids, **kwargs)  # noqa: E501
@@ -558,11 +558,11 @@ class ConceptsApi(object):
 
         Retrieves the beacon aggregator assigned cliques of equivalent concepts that includes the specified (url-encoded) CURIE identifiers. Note that the clique to which a given concept CURIE belongs may change over time as the aggregator progressively discovers the members of the clique. Any unmatched identifiers will be ignored (e.g. the id couldn't be found in any of the beacons)   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.post_cliques_query_with_http_info(ids, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.post_cliques_query_with_http_info(ids, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[str] ids: an array of [CURIE-encoded](https://www.w3.org/TR/curie/) identifiers of interest to be resolved to a list of concept cliques (required)
         :return: ServerCliquesQuery
                  If the method is called asynchronously,
@@ -570,7 +570,7 @@ class ConceptsApi(object):
         """
 
         all_params = ['ids']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -621,7 +621,7 @@ class ConceptsApi(object):
             files=local_var_files,
             response_type='ServerCliquesQuery',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -632,11 +632,11 @@ class ConceptsApi(object):
 
         Posts the query parameters to retrieves a list of concepts from the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.post_concepts_query(keywords, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.post_concepts_query(keywords, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[str] keywords: an array of keywords or substrings against which to match concept names and synonyms (required)
         :param list[str] categories: a subset array of concept categories (specified as codes 'gene', 'pathway', etc.) to which to constrain concepts matched by the main keyword search (see [Biolink Model](https://biolink.github.io/biolink-model) for the full list of codes) 
         :param list[int] beacons: subset of aggregator indices of beacons to be used as knowledge sources for the query (if omitted, then the all beacons are queried) 
@@ -645,7 +645,7 @@ class ConceptsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.post_concepts_query_with_http_info(keywords, **kwargs)  # noqa: E501
         else:
             (data) = self.post_concepts_query_with_http_info(keywords, **kwargs)  # noqa: E501
@@ -656,11 +656,11 @@ class ConceptsApi(object):
 
         Posts the query parameters to retrieves a list of concepts from the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.post_concepts_query_with_http_info(keywords, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.post_concepts_query_with_http_info(keywords, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param list[str] keywords: an array of keywords or substrings against which to match concept names and synonyms (required)
         :param list[str] categories: a subset array of concept categories (specified as codes 'gene', 'pathway', etc.) to which to constrain concepts matched by the main keyword search (see [Biolink Model](https://biolink.github.io/biolink-model) for the full list of codes) 
         :param list[int] beacons: subset of aggregator indices of beacons to be used as knowledge sources for the query (if omitted, then the all beacons are queried) 
@@ -670,7 +670,7 @@ class ConceptsApi(object):
         """
 
         all_params = ['keywords', 'categories', 'beacons']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -727,7 +727,7 @@ class ConceptsApi(object):
             files=local_var_files,
             response_type='ServerConceptsQuery',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
